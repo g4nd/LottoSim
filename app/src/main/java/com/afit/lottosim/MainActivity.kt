@@ -29,11 +29,12 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mAdView : AdView
 
-    val PREFS_FILENAME = "com.afit.lottosim.prefs"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
+
 
         firebaseAnalytics = Firebase.analytics
 
@@ -45,8 +46,7 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
 
-        //TO STORE DATA TODO
-        val prefs = this.getSharedPreferences(PREFS_FILENAME, 0)
+
 
         //////////////////////////////////
         //STARTING GAME ON MAIN MENU//////

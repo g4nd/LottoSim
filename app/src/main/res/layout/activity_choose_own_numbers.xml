@@ -4,6 +4,430 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFE3E3"
     tools:context=".ChooseOwnNumbers">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Choose Your Own Numbers"
+                    android:textColor="#000000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/yourNumsTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Your Numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#029DAA" />
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt2"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="G"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt3"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="O"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt4"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="O"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt5"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="D"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/yourNumberTxt6"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:textSize="30dp" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/lottoNumsTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="Lotto Numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#029DAA" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt2"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="L"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt3"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="U"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt4"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="C"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt5"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:text="K"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/lottoNumberTxt6"
+                        android:layout_width="50dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
+                        android:gravity="center"
+                        android:textSize="30dp" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/newNumberBtn"
+                    android:layout_width="20dp"
+                    android:layout_height="75dp"
+                    android:background="#F9C846"
+                    android:textSize="30sp"
+                    android:text="Play 1 Draw"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Biggest Win (matches)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Number of Times Played"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/biggestMatchTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="           " />
+
+                <TextView
+                    android:id="@+id/timesPlayedTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="30dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Est. Cash Won"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Est. Cash Spent"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/estCashWon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30dp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="           " />
+
+                <TextView
+                    android:id="@+id/estCashSpent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30dp"
+                    android:textColor="#000000"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/backToMenuBtn"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F8D370"
+                    android:text="Back To Menu" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adViewCON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                    >
+                    <!--ads:adUnitId="ca-app-pub-9554448082616053/2022024572"-->
+                </com.google.android.gms.ads.AdView>
+
+            </TableRow>
+
+
+        </TableLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

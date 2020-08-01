@@ -8,6 +8,14 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.InitializationStatus
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_l_d_every_time.*
 
 class LDEveryTime : AppCompatActivity() {
@@ -19,7 +27,7 @@ class LDEveryTime : AppCompatActivity() {
     var freeGoes = 0
     var cashSpent = 0
     var showTwoWinAlert = 1
-
+    var totalWinsCash = 0
     var lottoprice = 2
 
     var threeballs = 30
@@ -34,6 +42,10 @@ class LDEveryTime : AppCompatActivity() {
     var matched5 = 0
     var matched6 = 0
 
+
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_l_d_every_time)
@@ -47,15 +59,25 @@ class LDEveryTime : AppCompatActivity() {
 
             startActivity(intent)
         }
+        firebaseAnalytics = Firebase.analytics
+        lateinit var mAdView : AdView
+        MobileAds.initialize(
+            this
+        ) { initializationStatus: InitializationStatus? -> }
+        mAdView = findViewById(R.id.adViewLDET)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     fun draw(){
 
-        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
             param(FirebaseAnalytics.Param.ITEM_ID, "Draw Pressed")
             param(FirebaseAnalytics.Param.ITEM_NAME, "New Draw")
             param(FirebaseAnalytics.Param.CONTENT_TYPE, "Button")
-        }*/
+        }
+
+
 
         numberOfTimesPlayed +=1
         cashSpent = lottoprice*(numberOfTimesPlayed-freeGoes)
@@ -81,7 +103,7 @@ class LDEveryTime : AppCompatActivity() {
         val numberTxtView5 = findViewById<TextView>(R.id.yourNumberTxt5)
         val numberTxtView6 = findViewById<TextView>(R.id.yourNumberTxt6)
 
-        //println("created textViews")
+        ////println("created textViews")
 
         val txtViewsYour = arrayOf(numberTxtView, numberTxtView2, numberTxtView3, numberTxtView4, numberTxtView5,
             numberTxtView6)
@@ -94,10 +116,10 @@ class LDEveryTime : AppCompatActivity() {
         yourNumbers.sort()
         drawNumbers.sort()
 
-        println("your numbers are ")
-        yourNumbers.forEach(::println)
-        println("computer numbers are ")
-        drawNumbers.forEach(::println)
+        ////println("your numbers are ")
+        //yourNumbers.forEach(:://println)
+        ////println("computer numbers are ")
+        //drawNumbers.forEach(:://println)
 
         var matchesInDraw = 0
 
@@ -114,12 +136,12 @@ class LDEveryTime : AppCompatActivity() {
             lottoNumberTxtViewToUpdate.setTextSize(30.toFloat())
 
             if (drawNumbers.contains(yourNumbers.get(i))){
-                println("YOU HAVE A MATCH ON " + yourNumbers.get(i))
+                ////println("YOU HAVE A MATCH ON " + yourNumbers.get(i))
                 txtViewToUpdate.setTextColor(Color.parseColor("#008000"))
                 txtViewToUpdate.setTextSize(40.toFloat())
                 matchesInDraw += 1
             }else{
-                println("NO MATCH ON " + yourNumbers.get(i))
+                ////println("NO MATCH ON " + yourNumbers.get(i))
             }
 
 
@@ -128,7 +150,7 @@ class LDEveryTime : AppCompatActivity() {
             lottoNumberTxtViewToUpdate.setText(drawNumbers.get(i).toString())
 
         }
-        println("You matched on " + matchesInDraw + " numbers")
+        ////println("You matched on " + matchesInDraw + " numbers")
         if (matchesInDraw > biggestWin){
             biggestWin = matchesInDraw
         }
@@ -138,47 +160,24 @@ class LDEveryTime : AppCompatActivity() {
             1 -> matched1 +=1
             2 -> matched2Handler()
             3 -> matched3Handler()
-            4 -> matched4 +=1
-            5 -> matched5 +=1
-            6 -> matched6 +=1
+            4 -> matched4Handler()
+            5 -> matched5Handler()
+            6 -> matched6Handler()
             else -> {matched0 +=1
             }
         }
 
-        var totalWinsCash = ((matched3 * threeballs) + (matched4 * fourballs) +
+        totalWinsCash = ((matched3 * threeballs) + (matched4 * fourballs) +
                 (matched5 * fiveballs))
 
 
         estCashWon.setText("£" + totalWinsCash.toString())
 
 
-        println("Your biggest win is " + biggestWin + " matched numbers")
+        ////println("Your biggest win is " + biggestWin + " matched numbers")
         biggestMatch.setText(biggestWin.toString())
 
     }
-
-    fun matched2Handler() {
-
-        println("Entered Matched 2 Handler")
-        println("Cash Spent is " + cashSpent)
-        matched2 +=1
-        freeGoes +=1
-        println("You get a free go for matchign 2")
-        println("Cash Spent is now " + cashSpent)
-        estCashSpent.setText("£" + cashSpent.toString() )
-
-        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
-            param(FirebaseAnalytics.Param.ITEM_ID, "Start Game Button")
-            param(FirebaseAnalytics.Param.ITEM_NAME, "Start Game")
-            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Matches")
-        }*/
-
-        //showWinAlertView()
-        if (showTwoWinAlert == 1) {
-            winAlert(2, matched2)
-        }else{}
-    }
-
     fun winAlert(matchCount : Int, timesMatched : Int){
 
         var prizeWon = ""
@@ -230,7 +229,6 @@ class LDEveryTime : AppCompatActivity() {
         builder.show()
 
     }
-
     fun shareToTwitter(thisWin : String){
         val url = "http://www.twitter.com/intent/tweet?text=I just " + thisWin +  " %23LottoSim.  Get it yourself on the Google Play Store! %40SimLotto"
         val i = Intent(Intent.ACTION_VIEW)
@@ -243,15 +241,34 @@ class LDEveryTime : AppCompatActivity() {
             param(FirebaseAnalytics.Param.CONTENT_TYPE, "Win Share")
         }*/
     }
+    fun matched2Handler() {
 
+        //println("Entered Matched 2 Handler")
+        //println("Cash Spent is " + cashSpent)
+        matched2 +=1
+        freeGoes +=1
+        //println("You get a free go for matchign 2")
+        //println("Cash Spent is now " + cashSpent)
+        estCashSpent.setText("£" + cashSpent.toString() )
 
+        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, "Start Game Button")
+            param(FirebaseAnalytics.Param.ITEM_NAME, "Start Game")
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Matches")
+        }*/
+
+        //showWinAlertView()
+        if (showTwoWinAlert == 1) {
+            winAlert(2, matched2)
+        }else{}
+    }
     fun matched3Handler() {
 
-        println("Entered Matched 3 Handler")
-        println("Cash Spent is " + cashSpent)
+        //println("Entered Matched 3 Handler")
+        //println("Cash Spent is " + cashSpent)
         matched3 +=1
-        println("You win £30 for matchign 3")
-        println("Cash Spent is now " + cashSpent)
+        //println("You win £30 for matchign 3")
+        //println("Cash Spent is now " + cashSpent)
         estCashSpent.setText("£" + cashSpent.toString() )
 
         /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
@@ -265,12 +282,60 @@ class LDEveryTime : AppCompatActivity() {
         winAlert(3, matched3)
 
     }
+    fun matched4Handler() {
 
+        matched4 +=1
+        estCashSpent.setText("£" + cashSpent.toString() )
+
+        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, "Start Game Button")
+            param(FirebaseAnalytics.Param.ITEM_NAME, "Start Game")
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Matches")
+        }*/
+
+        //showWinAlertView()
+
+        winAlert(4, matched4)
+
+    }
+    fun matched5Handler() {
+
+        matched5 +=1
+
+        estCashSpent.setText("£" + cashSpent.toString() )
+
+        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, "Start Game Button")
+            param(FirebaseAnalytics.Param.ITEM_NAME, "Start Game")
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Matches")
+        }*/
+
+        //showWinAlertView()
+
+        winAlert(5, matched5)
+
+    }
+    fun matched6Handler() {
+
+        matched6 +=1
+        estCashSpent.setText("£" + cashSpent.toString() )
+
+        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, "Start Game Button")
+            param(FirebaseAnalytics.Param.ITEM_NAME, "Start Game")
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Matches")
+        }*/
+
+        //showWinAlertView()
+
+        winAlert(6, matched6)
+
+    }
     fun getNumber(): ArrayList<Int> {
 
 
 
-        //println("added views to array")
+        ////println("added views to array")
 
         var ballsArray = arrayListOf<Int>()
 
@@ -279,7 +344,7 @@ class LDEveryTime : AppCompatActivity() {
         //fill the machine
         for (i in 1..numberOfBalls){
             ballsArray.add(i)
-            //println("added " + i +" to balls array")
+            ////println("added " + i +" to balls array")
         }
 
         //Draw the numbers
@@ -287,29 +352,29 @@ class LDEveryTime : AppCompatActivity() {
 
         //draw 6 numbers
         for (i in 0..5){
-            /*println("preshuffle check")
+            /*//println("preshuffle check")
             ballsArray.sort()
-            ballsArray.forEach(::println)*/
+            ballsArray.forEach(:://println)*/
 
 
             ballsArray.shuffle()
 
-            /*println("Shuffled balls")
-            println("")
-            println("")
-            println("")
-            println("")
-            println("This is how the machine looks now ")
-            ballsArray.forEach(::println)
-            println("")
-            println("")
-            println("")
-            println("")
-            println("")*/
+            /*//println("Shuffled balls")
+            //println("")
+            //println("")
+            //println("")
+            //println("")
+            //println("This is how the machine looks now ")
+            ballsArray.forEach(:://println)
+            //println("")
+            //println("")
+            //println("")
+            //println("")
+            //println("")*/
 
             val numberOfBallsLeft = ballsArray.count()
 
-            //println("there are " + numberOfBallsLeft + " balls left in the machine")
+            ////println("there are " + numberOfBallsLeft + " balls left in the machine")
 
             //Did a minus one here as the randomball was always one ahead. This is because if there are 44 objects
             //in the array, the randomizer here could choose object 44 and because we are doing from 0 to 44,
@@ -320,15 +385,15 @@ class LDEveryTime : AppCompatActivity() {
 
             val selectARandomBall = (0..numberOfBallsLeft-1).random()
 
-            //println("I've selected the ball at position " + selectARandomBall)
+            ////println("I've selected the ball at position " + selectARandomBall)
 
             val thisNumber = ballsArray.get(selectARandomBall)
 
             ballsArray.remove(thisNumber)
 
-            //println("removing number " + thisNumber + " from the machine")
+            ////println("removing number " + thisNumber + " from the machine")
 
-            //println("there are now " + ballsArray.count() + " left")
+            ////println("there are now " + ballsArray.count() + " left")
 
             outputArray.add(thisNumber)
 

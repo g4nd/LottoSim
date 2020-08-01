@@ -8,6 +8,10 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.InitializationStatus
 import kotlinx.android.synthetic.main.activity_l_d_every_time.*
 
 class LDOneTime : AppCompatActivity() {
@@ -24,6 +28,14 @@ class LDOneTime : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        lateinit var mAdView : AdView
+        MobileAds.initialize(
+            this
+        ) { initializationStatus: InitializationStatus? -> }
+        mAdView = findViewById(R.id.adViewLDOT)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
 
 

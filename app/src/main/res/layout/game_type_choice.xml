@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFE3E3">
 
 
     <TableLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -16,36 +17,48 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center">
 
             <Button
                 android:id="@+id/newLDEachBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="65dp"
-                android:text="New Lucky Dip Each Draw" />
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="#F9C846"
+                android:text="New Lucky Dip Each Draw"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center">
 
             <Button
                 android:id="@+id/oneLDBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="65dp"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="#F9C846"
+                android:textSize="30sp"
                 android:text="One Lucky Dip For All Draws" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center">
 
             <Button
                 android:id="@+id/letMeChooseBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="65dp"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="#F9C846"
+                android:textSize="30sp"
                 android:text="Let Me Choose My Own" />
         </TableRow>
 

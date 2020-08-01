@@ -17,7 +17,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="One Lucky Dip For All Draws"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#000000" />
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -51,9 +69,9 @@
                         android:id="@+id/yourNumberTxt"
                         android:layout_width="50dp"
                         android:layout_height="65dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/yourNumberTxt2"
@@ -61,10 +79,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="G"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/yourNumberTxt3"
@@ -72,10 +90,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="O"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/yourNumberTxt4"
@@ -83,10 +101,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="O"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/yourNumberTxt5"
@@ -94,10 +112,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="D"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/yourNumberTxt6"
@@ -105,9 +123,9 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
                 </LinearLayout>
 
             </TableRow>
@@ -146,9 +164,9 @@
                         android:id="@+id/lottoNumberTxt"
                         android:layout_width="50dp"
                         android:layout_height="65dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/lottoNumberTxt2"
@@ -156,10 +174,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="L"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/lottoNumberTxt3"
@@ -167,10 +185,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="U"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/lottoNumberTxt4"
@@ -178,10 +196,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="C"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/lottoNumberTxt5"
@@ -189,10 +207,10 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
                         android:text="K"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/lottoNumberTxt6"
@@ -200,9 +218,9 @@
                         android:layout_height="65dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/lottosim_numbersuround"
                         android:gravity="center"
-                        android:textSize="30dp"
-                        android:background="@drawable/lottosim_numbersuround"/>
+                        android:textSize="30dp" />
 
                 </LinearLayout>
 
@@ -252,7 +270,7 @@
                     android:gravity="center"
                     android:text="Biggest Win (matches)"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#545863"
+                    android:textColor="#000000"
                     android:textSize="15dp" />
 
                 <TextView
@@ -267,7 +285,7 @@
                     android:gravity="center"
                     android:text="Number of Times Played"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#545863"
+                    android:textColor="#000000"
                     android:textSize="15dp" />
             </TableRow>
 
@@ -282,6 +300,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
+                    android:textColor="#000000"
                     android:textSize="30dp" />
 
                 <TextView
@@ -296,6 +315,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
+                    android:textColor="#000000"
                     android:textSize="30dp" />
 
             </TableRow>
@@ -312,7 +332,7 @@
                     android:gravity="center"
                     android:text="Est. Cash Won"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#545863"
+                    android:textColor="#000000"
                     android:textSize="15dp" />
 
                 <TextView
@@ -327,7 +347,7 @@
                     android:gravity="center"
                     android:text="Est. Cash Spent"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#545863"
+                    android:textColor="#000000"
                     android:textSize="15dp" />
             </TableRow>
 
@@ -342,7 +362,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="#000000"/>
 
                 <TextView
                     android:id="@+id/textView19"
@@ -356,7 +377,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="#000000"/>
 
             </TableRow>
 
@@ -391,16 +413,17 @@
                 android:gravity="center">
 
                 <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/adView2"
+                    android:id="@+id/adViewLDOT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     ads:adSize="BANNER"
-                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+                    >
 
                 </com.google.android.gms.ads.AdView>
-
+<!--ads:adUnitId="ca-app-pub-9554448082616053/6577359013"-->
             </TableRow>
 
 
